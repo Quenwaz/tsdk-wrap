@@ -5,6 +5,9 @@
 为提供给python调用， 尝试将大疆红外测温sdk， 通过`pybind11`封装为python模块。 而在实际封装过程中存在`内存泄漏`， 于是放弃。 直接利用python的`ctypes`调用dll, 反而不存在内存泄漏。
 
 
+> 大疆红外测温sdk下载地址为[https://www.dji.com/cn/downloads/softwares/dji-thermal-sdk](https://www.dji.com/cn/downloads/softwares/dji-thermal-sdk)
+
+
 ### 如何切换
 在thermal/CMakeLists.txt中存在COMPILE_TO_DLL选项用于切换pybind11方式还是dll方式。
 
