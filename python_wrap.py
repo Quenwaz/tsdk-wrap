@@ -83,7 +83,12 @@ class ThermalInfo:
         """
         self.__verbose()
         self.thermal.set_measurement_params.restype = ctypes.c_bool
-        return self.thermal.set_measurement_params(self.handle, humidity, emissivity, reflection, ambient_temp, distance)
+        return self.thermal.set_measurement_params(self.handle, 
+                                                   ctypes.c_float(humidity), 
+                                                   ctypes.c_float(emissivity), 
+                                                   ctypes.c_float(reflection), 
+                                                   ctypes.c_float(ambient_temp), 
+                                                   ctypes.c_float(distance))
 
     def get_measurement_params(self):
         """获取当前测温参数
