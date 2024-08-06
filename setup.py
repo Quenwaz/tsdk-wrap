@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
   long_description = f.read()
 
 setup(name='pytsdk',
-      version='0.0.6',
+      version='0.0.7',
       description='Python version of dji_thermal_sdk',
       long_description=long_description,
       author='quenwa zhang',
