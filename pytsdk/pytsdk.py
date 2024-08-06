@@ -186,8 +186,8 @@ class ThermalInfo:
 
 
 if __name__ == "__main__":
-    dll_path =  r"thermal.dll"
-    thermal = ThermalInfo(dll_path, True)
+    thermal = ThermalInfo(True)
     thermal.open(r"0B2D25BC332B40D09D8E6DD60050B00A.jpg")
-    thermal.get_temperature()
+    temperature = thermal.get_temperature()
+    raw_image = thermal.get_raw_image()
     thermal.close()

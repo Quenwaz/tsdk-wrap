@@ -1,18 +1,16 @@
 # 大疆红外测温SDK调用封装
 
-
-
 为提供给python调用， 尝试将大疆红外测温sdk， 通过`pybind11`封装为python模块。 而在实际封装过程中存在`内存泄漏`， 于是放弃。 直接利用python的`ctypes`调用dll, 反而不存在内存泄漏。
 
 
 > 大疆红外测温sdk下载地址为[https://www.dji.com/cn/downloads/softwares/dji-thermal-sdk](https://www.dji.com/cn/downloads/softwares/dji-thermal-sdk)
 
 
-### 如何切换
+## 如何切换
 在thermal/CMakeLists.txt中存在COMPILE_TO_DLL选项用于切换pybind11方式还是dll方式。
 
 
-### 测试与检测内存泄漏
+## 测试与检测内存泄漏
 
 Windows检测内存泄漏参考[使用 CRT 库查找内存泄漏](https://learn.microsoft.com/zh-cn/cpp/c-runtime-library/find-memory-leaks-using-the-crt-library?view=msvc-170)。 具体在代码中使用：
 
@@ -48,6 +46,18 @@ print(f"RSS memory: {process.memory_info().rss / (1024 * 1024):.2f} MB")
 ```
 
 > RSS是指Resident Set Size 实际使用物理内存
+
+
+## 示例
+```python
+
+thermal = ThermalInfo(True)
+thermal.open(r"0B2D25BC332B40D09D8E6DD60050B00A.jpg")
+temperature = thermal.get_temperature()
+raw_image = thermal.get_raw_image()
+thermal.close()
+
+```
 
 
 
