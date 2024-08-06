@@ -28,6 +28,7 @@ Windows检测内存泄漏参考[使用 CRT 库查找内存泄漏](https://learn.
     #include <crtdbg.h>
 
 建议在程序开始处编写如下代码:
+
 .. code-block:: cpp
 
     _CrtDumpMemoryLeaks();
@@ -38,6 +39,7 @@ Windows检测内存泄漏参考[使用 CRT 库查找内存泄漏](https://learn.
 
 
 如何测试内存泄漏？通过python的`psutil`很方便对程序的内存情况进行监控， 案例如下:
+
 .. code-block:: python
 
     import psutil
