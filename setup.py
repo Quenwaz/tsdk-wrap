@@ -1,11 +1,11 @@
 from setuptools import setup
 from setuptools import find_packages
 
-with open("README.rst", "r", encoding="utf-8") as f:
+with open("README.md", "r", encoding="utf-8") as f:
   long_description = f.read()
 
 setup(name='pytsdk',
-      version='0.0.1',
+      version='0.0.6',
       description='Python version of dji_thermal_sdk',
       long_description=long_description,
       author='quenwa zhang',
@@ -14,10 +14,15 @@ setup(name='pytsdk',
       url='https://github.com/Quenwaz/tsdk-wrap',
       install_requires=[
         "enum34;python_version<'3.4'",
+        "numpy"
       ],
-      packages=find_packages(where="pycall"),
-      package_dir={"": "pycall"},
-      include_package_data = True,
+      long_description_content_type='text/markdown',
+      packages=find_packages(where="."),
+    #   package_dir={"": "pytsdk"},
+      package_data={
+        "pytsdk.libs":["*.dll", "*.ini"]
+      },
+    #   include_package_data = True,
       platforms=["Windows"],
       license='MIT License',
       classifiers=[

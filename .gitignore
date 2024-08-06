@@ -14,7 +14,7 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+# *.dll
 
 # Fortran module files
 *.mod
@@ -39,7 +39,9 @@
 /pcl_extend
 /build
 /thirdparty/dji_thermal_sdk_v1.5_20240507
+/thirdparty/**/*.dll
 **/pytsdk.egg-info
+**/__pycache__
 
 
 

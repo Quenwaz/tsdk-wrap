@@ -31,12 +31,15 @@ def Singleton(cls):
 @Singleton
 class ThermalInfo:
 
-    def __init__(self, dll_path: str, verbose=False):
+    def __init__(self, verbose=False):
         import os
+        dll_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "libs", "thermal.dll")
         # 设置工作路径， 否则加载失败
+        oldcwd = os.getcwd()
         os.chdir(os.path.dirname(dll_path))
         self.verbose = verbose
         self.thermal = ctypes.cdll.LoadLibrary(dll_path)
+        os.chdir(oldcwd)
         self.handle:ctypes.c_void_p = ctypes.c_void_p(None)
 
 
