@@ -6,15 +6,16 @@ cmake_minimum_required (VERSION 3.8)
 
 set(target_name thermal)
 
-set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD 14)
+message(STATUS "CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}")
 
 option(COMPILE_TO_DLL "compile to dynamic link library" ON)
 
 
 if(NOT COMPILE_TO_DLL)
     # https://pybind11.readthedocs.io/en/stable/compiling.html
-    set(PYTHON_INTERPRETER_PATH F:/DevEnvs/Python/Anaconda3/envs/pybind39)
+    set(PYTHON_INTERPRETER_PATH $ENV{PyDevEnvs}/envs/pybind39)
     set(PYTHON_LIBRARY ${PYTHON_INTERPRETER_PATH}/libs/python39.lib)
     set(PYTHON_INCLUDE_DIR ${PYTHON_INTERPRETER_PATH}/include)
     set(PYTHON_EXECUTABLE ${PYTHON_INTERPRETER_PATH}/python.exe)
@@ -61,3 +62,7 @@ if(NOT COMPILE_TO_DLL)
                                              CUDA_VISIBILITY_PRESET "hidden")
 endif()
 
+
+install(TARGETS ${target_name} 
+            RUNTIME DESTINATION libs
+        )

@@ -33,7 +33,13 @@
 
 *.zip
 
+/dist
+/.vscode
 /tests
 /pcl_extend
+/build
 /thirdparty/dji_thermal_sdk_v1.5_20240507
+**/pytsdk.egg-info
+
+
 

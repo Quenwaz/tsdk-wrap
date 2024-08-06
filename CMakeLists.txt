@@ -3,11 +3,8 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("python_module")
+project ("pytsdk")
 
+set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/pycall)
 
-list(APPEND CMAKE_PREFIX_PATH "F:/DevEnvs/Python/Anaconda3/envs/pybind39/share/cmake/pybind11")
-
-# Include sub-projects.
 add_subdirectory ("thermal")
-
