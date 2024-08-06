@@ -21,6 +21,7 @@
 Windows检测内存泄漏参考[使用 CRT 库查找内存泄漏](https://learn.microsoft.com/zh-cn/cpp/c-runtime-library/find-memory-leaks-using-the-crt-library?view=msvc-170)。 具体在代码中使用：
 
 在合适的地方包含如下代码：
+
 .. code-block:: cpp
     
     #define _CRTDBG_MAP_ALLOC
