@@ -55,7 +55,7 @@ Windows检测内存泄漏参考[使用 CRT 库查找内存泄漏](https://learn.
     print(f"RSS memory: {process.memory_info().rss / (1024 * 1024):.2f} MB")
 
 
-> RSS是指Resident Set Size 实际使用物理内存
+> > RSS是指Resident Set Size 实际使用物理内存
 
 
 
